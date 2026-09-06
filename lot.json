@@ -1,0 +1,47 @@
+[
+  {
+    "Loteria": "Dia de Sorte",
+    "Probabilidade": "1.52115836209273e-7",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/diadesorte/latest"
+  },
+  {
+    "Loteria": "Lotofácil",
+    "Probabilidade": "8.74075446696257e-8",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/lotofacil/latest"
+  },
+  {
+    "Loteria": "Super Sete",
+    "Probabilidade": "3.33333333333333e-8",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/supersete/latest"
+  },
+  {
+    "Loteria": "Lotomania",
+    "Probabilidade": "2.9310123232947602e-8",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/lotomania/latest"
+  },
+  {
+    "Loteria": "Dupla Sena",
+    "Probabilidade": "2.09766299365876e-8",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/duplasena/latest"
+  },
+  {
+    "Loteria": "Quina",
+    "Probabilidade": "1.38657700283283e-8",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/quina/latest"
+  },
+  {
+    "Loteria": "Timemania",
+    "Probabilidade": "1.07928154537187e-8",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/timemania/latest"
+  },
+  {
+    "Loteria": "Mega-Sena",
+    "Probabilidade": "3.32908143053026e-9",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/megasena/latest"
+  },
+  {
+    "Loteria": "+Milionária",
+    "Probabilidade": "6.99220997886255e-10",
+    "URL": "https://loteriascaixa-api.herokuapp.com/api/maismilionaria/latest"
+  }
+]

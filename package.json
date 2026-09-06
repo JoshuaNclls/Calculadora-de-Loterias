@@ -1,0 +1,31 @@
+{
+  "name": "lotovantagem",
+  "version": "1.0.0",
+  "description": "Aplicativo de Avaliação do Retorno Médio das Loterias Caixa",
+  "main": "server.js",
+  "bin": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build:exe": "npx @yao-pkg/pkg . --targets node18-win-x64 --output dist/LotoVantagem.exe"
+  },
+  "pkg": {
+    "assets": [
+      "public/**/*",
+      "lot.json"
+    ],
+    "outputPath": "dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "lowdb": "^7.0.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "@yao-pkg/pkg": "^6.3.1"
+  }
+}
