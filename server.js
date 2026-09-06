@@ -11,9 +11,12 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Serve static files (handles pkg environment assets path)
-const publicPath = path.join(__dirname, 'public');
-app.use(express.static(publicPath));
+// Serve Vite build output (dist/client) if present, else fallback to public/
+const staticPath = fs.existsSync(path.join(__dirname, 'dist', 'client'))
+  ? path.join(__dirname, 'dist', 'client')
+  : path.join(__dirname, 'public');
+
+app.use(express.static(staticPath));
 
 // Initialize SQLite database
 db.initDatabase().catch(err => console.error('Erro ao inicializar SQLite:', err));
@@ -165,19 +168,19 @@ app.get('/api/lot-json', (req, res) => {
   }
 });
 
-// Fallback route to serve index.html for unknown routes
+// Fallback route for SPA index.html
 app.use((req, res) => {
-  res.sendFile(path.join(publicPath, 'index.html'));
+  const indexPath = path.join(staticPath, 'index.html');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
+  } else {
+    res.status(404).send('Not Found');
+  }
 });
 
 app.listen(PORT, () => {
   console.log(`=======================================================`);
-  console.log(`🚀 LotoVantagem - Servidor Executável Ativo!`);
-  console.log(`📍 Acesse no navegador: http://localhost:${PORT}`);
+  console.log(`🚀 LotoVantagem (Vite + React + SQLite) Rodando!`);
+  console.log(`📍 Acesse em: http://localhost:${PORT}`);
   console.log(`=======================================================`);
-
-  // Automatically open browser on Windows when launched as executable
-  if (process.platform === 'win32') {
-    exec(`start http://localhost:${PORT}`);
-  }
 });
